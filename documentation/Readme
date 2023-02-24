@@ -1,0 +1,3 @@
+unter Arduino -> Settings müssen die zwei Pfade "Arduino:Path" und "Arduino:Command Path" beide auf den installationsord der arduino-cli Datei zeigen.
+In meinem Fall:
+C:\Users\lukas\OneDrive\Dokumente\Code\Arduino\arduino-cli_0.31.0_Windows_64bit
