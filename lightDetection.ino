@@ -32,10 +32,17 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-  int analogValue = analogRead(A0);
+  int analogValue = analogRead(A1);
   Serial.println(analogValue);
-  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(1000);                      // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-  delay(1000);                      // wait for a second
+  if (analogValue>500)
+  {
+    digitalWrite(A2, HIGH);           // activate light relais
+    digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  }
+  else
+  {
+    digitalWrite(A2, LOW);            // deactivate light relais
+    digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  }
+  delay(1000);
 }
