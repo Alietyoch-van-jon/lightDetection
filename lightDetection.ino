@@ -22,10 +22,13 @@
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
 */
 
+int PinRelais = 0; // declare PinRelais variable and set it to 0
+
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(PinRelais, OUTPUT);
   // initialize serial connection for debugging
   Serial.begin(9600);
 }
@@ -36,12 +39,12 @@ void loop() {
   Serial.println(analogValue);
   if (analogValue>500)
   {
-    digitalWrite(A2, HIGH);           // activate light relais
+    digitalWrite(PinRelais, HIGH);           // activate light relais
     digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
   }
   else
   {
-    digitalWrite(A2, LOW);            // deactivate light relais
+    digitalWrite(PinRelais, LOW);            // deactivate light relais
     digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
   }
   delay(1000);
